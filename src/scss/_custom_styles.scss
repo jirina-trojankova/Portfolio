@@ -8,6 +8,10 @@ body {
     font-family: 'Alegreya Sans', sans-serif;
 }
 
+#logo {
+    padding: 1rem;
+}
+
 nav a {
     display: block;
     width: 100%;
@@ -102,6 +106,23 @@ h2 {
     background-color: $light_gray;
     margin: 0;
     padding: 0;
+}
+
+#my_progress {
+    width:  100%;
+    padding: 5px;
+    background-color: $light_gray;
+    color: $light_gray;
+    border-radius: 3px;
+}
+
+.bar {
+    width: 0%;
+    height: 1.8rem;
+    background-color: darkblue;
+    margin-bottom:  5px;
+    padding: 5px;
+    border-radius: 3px;
 }
 
 img {

@@ -1,20 +1,20 @@
 {
-  "name": "my-portfolio2",
+  "name": "MyFirstCoffeeShop",
   "version": "1.0.0",
   "main": "index.js",
   "devDependencies": {
+    "bootstrap": "^4.0.0",
     "del": "^3.0.0",
     "gulp": "^3.9.1",
+    "gulp-csso": "^3.0.0",
+    "gulp-minify": "^2.1.0",
     "gulp-sass": "^3.1.0",
     "gulp-watch": "^4.3.11"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "Martin Podloucký",
+  "author": "Daniel Srb, Martin Podloucký",
   "license": "MIT",
-  "description": "A simple blog page with just one post.",
-  "dependencies": {
-    "bootstrap": "^4.0.0-beta.3"
-  }
+  "description": "Example solution for a coffee shop web site."
 }
