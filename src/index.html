@@ -115,7 +115,7 @@
             $('#my_progress').appear();
 
 function my_progress(barID, value) {
-    $(barID).animate({'width' : value}, 500);
+    $(barID).delay(500).animate({'width' : value}, 500);
 }
 $('#my_progress').on('appear', function(){
     my_progress('#bar1','80%');

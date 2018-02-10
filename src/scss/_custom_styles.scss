@@ -21,6 +21,7 @@ nav a {
     text-align: center;
     text-transform: uppercase;
     white-space: nowrap; /* prevent text wrap in links (about me link)*/
+    transition: 800ms;
 }
 nav a:hover,
 nav a:focus {
@@ -74,14 +75,12 @@ h2 {
     background-image: url('../img/jumbotron-background2.jpg');
     background-position: center;
     background-repeat: no-repeat;
-    border: 1px solid black;
 }
 
 .jumbotron .transbox {
     margin: 30px;
-    background-color: $gray;
-    border: 1px solid black;
-    opacity: 0.6;
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 0.4);
     border-radius: 3px;
 }
 
@@ -89,7 +88,7 @@ h2 {
 .jumbotron .transbox h4 {
     margin:  5%;
     color: white;
-    opacity: 1;
+
 }
 
 .center {
@@ -122,6 +121,7 @@ h2 {
     background-color: darkblue;
     margin-bottom:  5px;
     padding: 5px;
+    padding-left: 15px;
     border-radius: 3px;
 }
 
