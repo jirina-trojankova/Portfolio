@@ -19,27 +19,14 @@
             <div id="logo">
                 <img src="/img/jt.svg" alt="My portfolio" width="50" height="50">
             </div>
-            <div class="navbar d-flex justify-content-end">
+            <div id="navbar">
                 <nav>
-                    <ul class="nav">
-                        <li class="nav-item">
-                            <a class="nav-link" href="#home">home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#skills">skills</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#portfolio">portfolio</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#about">about me</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#contact">contact</a>
-                        </li>
-                    </ul>
+                    <a href="#home">Home</a>
+                    <a href="#skills">Skills</a>
+                    <a href="#portfolio">Portfolio</a>
+                    <a href="#about">About</a>
+                    <a href="#contact">Contact</a>
                 </nav>
-
             </div>
 
 
@@ -336,44 +323,25 @@ $('#my_progress').on('appear', function(){
     </footer>
     <script  src="jquery-3.3.1.min.js"></script>
     <script>
-    // Select all links with hashes
-    $('a[href*="#"]')
-      // Remove links that don't actually link to anything
-      .not('[href="#"]')
-      .not('[href="#0"]')
-      .click(function(event) {
-        // On-page links
-        if (
-          location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '')
-          &&
-          location.hostname == this.hostname
-        ) {
-          // Figure out element to scroll to
-          var target = $(this.hash);
-          target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
-          // Does a scroll target exist?
-          if (target.length) {
-            // Only prevent default if animation is actually gonna happen
-            event.preventDefault();
-            $('html, body').animate({
-              scrollTop: target.offset().top
-            }, 1000, function() {
-              // Callback after animation
-              // Must change focus!
-              var $target = $(target);
-              $target.focus();
-              if ($target.is(":focus")) { // Checking if the target was focused
-                return false;
-              } else {
-                $target.attr('tabindex','-1'); // Adding tabindex for elements not focusable
-                $target.focus(); // Set focus again
-              };
-            });
-          }
-        }
-      });
+ 
 
+// When the user scrolls the page, execute myFunction
+window.onscroll = function() {myFunction()};
 
+// Get the navbar
+var navbar = document.getElementById("navbar");
+
+// Get the offset position of the navbar
+var sticky = navbar.offsetTop;
+
+// Add the sticky class to the navbar when you reach its scroll position. Remove "sticky" when you leave the scroll position
+function myFunction() {
+  if (window.pageYOffset >= sticky) {
+    navbar.classList.add("sticky")
+  } else {
+    navbar.classList.remove("sticky");
+  }
+}
     </script>
 </body>
 
