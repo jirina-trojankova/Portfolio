@@ -12,23 +12,6 @@ body {
     padding: 1rem;
 }
 
-nav a {
-    /*display: block;
-    width: 100%;
-    padding: 0.25rem 1rem;
-    color: #fff;
-    text-decoration: none;
-    text-align: center;
-    text-transform: uppercase;
-    white-space: nowrap;*/ /* prevent text wrap in links (about me link)*/
-    transition: 800ms;
-}
-nav a:hover,
-nav a:focus {
-    background-color: #f0997e;
-    color: #232323;
-}
-
 nav {
     background-color: $primary;
     border-radius: 3px;
@@ -36,17 +19,20 @@ nav {
  /* Style the navbar */
  #navbar {
     overflow: hidden;
-    background-color: #333;
+    background-color: $primary;
+    text-transform: uppercase;
+    text-align: right;
   }
 
   /* Navbar links */
   #navbar a {
-    float: left;
+    float: right;
     display: block;
     color: #f2f2f2;
     text-align: center;
     padding: 14px;
     text-decoration: none;
+    transition: 800ms;
   }
 
   /* Page content */
@@ -65,6 +51,12 @@ nav {
   .sticky + .content {
     padding-top: 60px;
   }
+
+#navbar a:hover,
+#navbar a:focus {
+    background-color: #f0997e;
+    color: #232323;
+}
 
 h1 {
     color: white;
