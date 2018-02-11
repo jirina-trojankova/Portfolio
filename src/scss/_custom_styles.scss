@@ -8,8 +8,8 @@ body {
     //font-family: 'Alegreya Sans', sans-serif;
 }
 
-#logo {
-    padding: 1rem;
+.navbar {
+    margin-bottom: 2rem;
 }
 
  /* Style the navbar */
@@ -20,38 +20,25 @@ body {
     text-align: right;
   }
 
-  /* Navbar links */
-  #navbar a {
-    float: right;
-    display: block;
-    color: #f2f2f2;
+.navbar-nav {
+    width: 100%;
+}
+
+.nav-item {
+    flex: 1;
     text-align: center;
-    padding: 14px;
+}
+
+.nav-link {
     text-decoration: none;
-    transition: 800ms;
-  }
+    text-transform: uppercase;
+    white-space: nowrap;
 
-  /* Page content */
-  .content {
-    padding: 16px;
-  }
+    &:hover {
+        background-color: #f0997e;
+        color: #232323;
+    }
 
-  /* The sticky class is added to the navbar with JS when it reaches its scroll position */
-  .sticky {
-    position: fixed;
-    top: 0;
-    width: 100%
-  }
-
-  /* Add some top padding to the page content to prevent sudden quick movement (as the navigation bar gets a new position at the top of the page (position:fixed and top:0) */
-  .sticky + .content {
-    padding-top: 60px;
-  }
-
-#navbar a:hover,
-#navbar a:focus {
-    background-color: #f0997e;
-    color: #232323;
 }
 
 h1 {
