@@ -8,37 +8,59 @@ body {
     //font-family: 'Alegreya Sans', sans-serif;
 }
 
-.navbar {
-    margin-bottom: 2rem;
+#logo {
+
+}
+#welcome {
+margin-top: 1rem;
+margin-right: 8rem;
+font-size: 1.8rem;
 }
 
+nav {
+    background-color: $primary;
+    border-radius: 3px;
+}
  /* Style the navbar */
  #navbar {
     overflow: hidden;
-    background-color: $primary;
+    background-color: #860101;
     text-transform: uppercase;
     text-align: right;
   }
 
-.navbar-nav {
-    width: 100%;
-}
-
-.nav-item {
-    flex: 1;
+  /* Navbar links */
+  #navbar a {
+    float: right;
+    display: block;
+    color: #f2f2f2;
     text-align: center;
-}
-
-.nav-link {
+    padding: 14px;
     text-decoration: none;
-    text-transform: uppercase;
-    white-space: nowrap;
+    transition: 800ms;
+  }
 
-    &:hover {
-        background-color: #f0997e;
-        color: #232323;
-    }
+  /* Page content */
+  .content {
+    padding: 16px;
+  }
 
+  /* The sticky class is added to the navbar with JS when it reaches its scroll position */
+  .sticky {
+    position: fixed;
+    top: 0;
+    width: 100%
+  }
+
+  /* Add some top padding to the page content to prevent sudden quick movement (as the navigation bar gets a new position at the top of the page (position:fixed and top:0) */
+  .sticky + .content {
+    padding-top: 60px;
+  }
+
+#navbar a:hover,
+#navbar a:focus {
+    background-color: #f0997e;
+    color: #232323;
 }
 
 h1 {
@@ -124,6 +146,22 @@ img {
 
 img .about_me   {
   margin-top: 5 rem;
+}
+
+a #contacts {
+    font-size: 4rem;
+
+}
+
+.fa {
+    color: black;
+    margin: 2rem;
+    font-size: 4rem;
+  }
+
+
+.btn-outline-dark:hover {
+    background-color: #860101;
 }
 
 footer {
