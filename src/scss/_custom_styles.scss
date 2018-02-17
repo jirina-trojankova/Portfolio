@@ -117,6 +117,10 @@ h2 {
     border-radius: 3px;
 }
 
+.light_gray_clr {
+    background-color: $light_gray;
+}
+
 
 .my_blue {
     background-color: $my_blue;
@@ -177,8 +181,4 @@ a #contacts {
 
 footer {
     margin: 3rem;
-}
-
-footer p {
-    align: right;
 }
