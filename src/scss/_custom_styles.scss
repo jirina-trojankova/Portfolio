@@ -24,7 +24,7 @@ nav {
  /* Style the navbar */
  #navbar {
     overflow: hidden;
-    background-color: #860101;
+    background-color: $dark_red;
     text-transform: uppercase;
     text-align: right;
   }
@@ -88,7 +88,7 @@ h2 {
     padding-right: 1rem;
     padding-bottom: 16vw;
     padding-left: 1rem;
-    background-image: url('../img/jumbotron-background2.jpg');
+    background-image: url('../img/jumbotron-background4.jpg');
     background-position: center;
     background-repeat: no-repeat;
 }
@@ -96,7 +96,7 @@ h2 {
 .jumbotron .transbox {
     margin: 30px;
     padding: 10px;
-    background-color: rgba(0, 0, 0, 0.4);
+    background-color: rgba(0, 0, 0, 0.836);
     border-radius: 3px;
 }
 
@@ -133,11 +133,13 @@ h2 {
 .bar {
     width: 0%;
     height: 1.8rem;
-    background-color: darkblue;
+    background-color: rgb(138, 124, 233);
     margin-bottom:  5px;
     padding: 5px;
     padding-left: 15px;
     border-radius: 3px;
+    color: rgb(74, 68, 116);
+    padding-left: 10px;
 }
 
 img {
@@ -161,7 +163,7 @@ a #contacts {
 
 
 .btn-outline-dark:hover {
-    background-color: #860101;
+    background-color: $primary;
 }
 
 footer {
