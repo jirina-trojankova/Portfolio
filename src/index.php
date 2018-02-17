@@ -1,4 +1,36 @@
-<!DOCTYPE html>
+<?php
+mb_internat:encoding("UTF-8");
+$say = '';
+if (isset($_GET['success']))
+    $say = 'Your e-mail has been sent I will get back to you ASAP.';
+
+
+if ($_POST) {
+    if(isset($_POST['name']) && $_POST['name'] &&
+    (isset($_POST['mail']) && $_POST['mail'] &&
+    (isset($_POST['name']) && $_POST['name']
+    {
+
+        $header = 'From:' . $_POST['email'];
+        $header .= "\nMIME-Version: 1.0\n";
+        $header .= 'Content-Type: text/html; charset=\"utf-8\"\n';
+        $address = 'jirina.trojankova@seznam.cz';
+        $subject = 'New message from mailform?';
+        $success = mb_send_mail($address, $subject, $_POST['mail'], $header);
+        if ($success) {
+            $say = 'Your e-mail has been sent I will get back to you ASAP.';
+            header('Location: mailform.php?success=yes');
+            exit;
+        } else {
+            $say = 'Your e-mail has not been sent. Check the address.';
+        }
+    } else {
+        $say = 'Fill it correctly!';
+    }
+
+}
+
+?><!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -276,7 +308,15 @@ $('#my_progress').on('appear', function(){
             <div class="light_gray red">
                 <h4>Send me a message</h4>
 
-                <form action="http://cbp.vosk-design.cz/process-form.php" method="POST" class="form-contact">
+                <?php if ($say) echo '<p>' . $hlaska . '</p>';
+
+                $name = (isset($_POST['name'])) ? $_POST['name'] : '';
+                $email = (isset($_POST['email'])) ? $_POST['email'] : '';
+                $mail = (isset($_POST['mail'])) ? $_POST['mail'] : '';
+
+                ?>
+
+                <form method="POST" class="form-contact">
 
                     <div class="form-group">
 
@@ -306,7 +346,7 @@ $('#my_progress').on('appear', function(){
                         <br/>
 
                         <label for="message">Message</label>
-                        <textarea name="message" id="message" cols="30" rows="10" class="form-control" placeholder="Your message"></textarea>
+                        <textarea name="message" id="message" cols="30" rows="10" class="form-control" placeholder="Your message"><?php htmlspecialchars($mail) ?></textarea>
                         <br/>
 
                         <button type="button" class="btn btn-outline-dark">Send your message</button>
