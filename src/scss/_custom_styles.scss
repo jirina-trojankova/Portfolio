@@ -117,12 +117,17 @@ h2 {
     border-radius: 3px;
 }
 
-.light_gray_card {
-    background-color: $light_gray;
-    margin: 0;
-    padding: 0;
+
+.my_blue {
+    background-color: $my_blue;
+    padding: 2rem;
+    border-radius: 3px;
 }
 
+#skills {
+    margin-left: 15;
+    margin-right: 15;
+}
 #my_progress {
     width:  100%;
     padding: 5px;
@@ -134,7 +139,7 @@ h2 {
 .bar {
     width: 0%;
     height: 1.8rem;
-    background-color: rgb(138, 124, 233);
+    background-color: $my_blue;
     margin-bottom:  5px;
     padding: 5px;
     padding-left: 15px;
@@ -162,11 +167,18 @@ a #contacts {
     font-size: 4rem;
   }
 
-
+.btn-outline-dark {
+    transition: 1s;
+}
 .btn-outline-dark:hover {
-    background-color: $primary;
+    background-color: $my_blue;
+    transition: 800ms;
 }
 
 footer {
     margin: 3rem;
+}
+
+footer p {
+    align: right;
 }
