@@ -21,7 +21,7 @@
         </div>
 
         <div id="welcome">
-            <h5>Welcome to my webpage!</h5>
+            <h5>...Welcome to my webpage!</h5>
         </div>
     </div>
             <div id="navbar">
@@ -276,7 +276,7 @@ $('#my_progress').on('appear', function(){
             <div class="light_gray red">
                 <h4>Send me a message</h4>
 
-                <form action="http://cbp.vosk-design.cz/process-form.php" method="POST" class="form-contact">
+                <form method="POST" class="form-contact">
 
                     <div class="form-group">
 
@@ -306,7 +306,7 @@ $('#my_progress').on('appear', function(){
                         <br/>
 
                         <label for="message">Message</label>
-                        <textarea name="message" id="message" cols="30" rows="10" class="form-control" placeholder="Your message"></textarea>
+                        <textarea name="message" id="message" cols="30" rows="10" class="form-control" placeholder="Your message"><?php htmlspecialchars($mail) ?></textarea>
                         <br/>
 
                         <button type="button" class="btn btn-outline-dark">Send your message</button>

@@ -1,3 +1,37 @@
+<?php
+mb_internal_encoding("UTF-8");
+$say = '';
+if (isset($_GET['success']))
+    $say = 'Your e-mail has been sent I will get back to you ASAP.';
+
+
+if ($_POST) {
+    if(isset($_POST['firstname']) && $_POST['firstname'] &&
+    isset($_POST['lastname']) && $_POST['lastname'] &&
+    isset($_POST['mail']) && $_POST['mail'] &&
+    isset($_POST['phone']) && $_POST['phone'] &&
+    isset($_POST['message']) && $_POST['message'])
+    {
+        $header = 'From:' . $_POST['email'];
+        $header .= "\nMIME-Version: 1.0\n";
+        $header .= 'Content-Type: text/html; charset=\"utf-8\"\n';
+        $address = 'jirina.trojankova@seznam.cz';
+        $subject = 'New message from mailform?';
+        $success = mb_send_mail($address, $subject, $_POST['mail'], $header);
+        if ($success) {
+            $say = 'Your e-mail has been sent I will get back to you ASAP.';
+            header('Location: mailform.php?success=yes');
+            exit;
+        } else {
+            $say = 'Your e-mail has not been sent. Check the address.';
+        }
+    } else {
+        $say = 'Fill it correctly!';
+    }
+
+}
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -21,7 +55,7 @@
         </div>
 
         <div id="welcome">
-            <h5>...Welcome to my webpage!</h5>
+            <h5>Welcome to my webpage!</h5>
         </div>
     </div>
             <div id="navbar">
@@ -275,6 +309,16 @@ $('#my_progress').on('appear', function(){
 
             <div class="light_gray red">
                 <h4>Send me a message</h4>
+
+                <?php if ($say) echo '<p>' . $say . '</p>';
+
+                $firstname = (isset($_POST['first_name'])) ? $_POST['firstname'] : '';
+                $lastname = (isset($_POST['lastname'])) ? $_POST['lastname'] : '';
+                $email = (isset($_POST['email'])) ? $_POST['email'] : '';
+                $phone = (isset($_POST['phone'])) ? $_POST['phone'] : '';
+                $message = (isset($_POST['message'])) ? $_POST['message'] : '';
+
+                ?>
 
                 <form method="POST" class="form-contact">
 
