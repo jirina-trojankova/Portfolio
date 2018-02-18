@@ -1,16 +1,17 @@
 <?php
-mb_internat:encoding("UTF-8");
+mb_internal_encoding("UTF-8");
 $say = '';
 if (isset($_GET['success']))
     $say = 'Your e-mail has been sent I will get back to you ASAP.';
 
 
 if ($_POST) {
-    if(isset($_POST['name']) && $_POST['name'] &&
-    (isset($_POST['mail']) && $_POST['mail'] &&
-    (isset($_POST['name']) && $_POST['name']
+    if(isset($_POST['firstname']) && $_POST['firstname'] &&
+    isset($_POST['lastname']) && $_POST['lastname'] &&
+    isset($_POST['mail']) && $_POST['mail'] &&
+    isset($_POST['phone']) && $_POST['phone'] &&
+    isset($_POST['message']) && $_POST['message'])
     {
-
         $header = 'From:' . $_POST['email'];
         $header .= "\nMIME-Version: 1.0\n";
         $header .= 'Content-Type: text/html; charset=\"utf-8\"\n';
@@ -30,7 +31,8 @@ if ($_POST) {
 
 }
 
-?><!DOCTYPE html>
+?>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -308,11 +310,13 @@ $('#my_progress').on('appear', function(){
             <div class="light_gray red">
                 <h4>Send me a message</h4>
 
-                <?php if ($say) echo '<p>' . $hlaska . '</p>';
+                <?php if ($say) echo '<p>' . $say . '</p>';
 
-                $name = (isset($_POST['name'])) ? $_POST['name'] : '';
+                $firstname = (isset($_POST['first_name'])) ? $_POST['firstname'] : '';
+                $lastname = (isset($_POST['lastname'])) ? $_POST['lastname'] : '';
                 $email = (isset($_POST['email'])) ? $_POST['email'] : '';
-                $mail = (isset($_POST['mail'])) ? $_POST['mail'] : '';
+                $phone = (isset($_POST['phone'])) ? $_POST['phone'] : '';
+                $message = (isset($_POST['message'])) ? $_POST['message'] : '';
 
                 ?>
 
