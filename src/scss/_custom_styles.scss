@@ -2,6 +2,7 @@ html {
     box-sizing: border-box;
 }
 body {
+    background-color: beige;
     margin: 0;
     font-family: 'Roboto Condensed', sans-serif;
     font-weight: light;
@@ -171,6 +172,10 @@ imgabout_me   {
 .btn-outline-dark:hover {
     background-color: $primary;
     transition: 800ms;
+}
+
+form-control {
+    background-color: beige;
 }
 
 footer {
