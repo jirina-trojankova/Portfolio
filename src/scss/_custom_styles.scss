@@ -156,14 +156,18 @@ imgabout_me   {
 }
 
 #contacts {
-    font-size:8 rem;
-
+    font-size: 54px;
+    display: block;
+    text-align: center;
+    color: $dark_red;
 }
 
 .fa {
-    color: black;
-    margin: 2rem;
-    font-size: 4rem;
+    color: $dark_red;
+  }
+
+  .fa:hover {
+      color: $primary;
   }
 
 .btn-outline-dark {
@@ -172,10 +176,6 @@ imgabout_me   {
 .btn-outline-dark:hover {
     background-color: $primary;
     transition: 800ms;
-}
-
-form-control {
-    background-color: beige;
 }
 
 footer {
