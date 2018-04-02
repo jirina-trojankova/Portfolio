@@ -1,4 +1,5 @@
 node-bs4-js-static
+/deployment.*
 /phploy.*
 node_modules
 package-lock.json
