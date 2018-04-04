@@ -14,7 +14,7 @@ color: $dark_red;
 }
 #welcome {
 margin-top: 1rem;
-margin-right: 8rem;
+margin-right: 4rem;
 font-size: 1.8rem;
 }
 
@@ -50,7 +50,8 @@ nav {
   .sticky {
     position: fixed;
     top: 0;
-    width: 100%
+    width: 100%;
+    z-index: 1;
   }
 
   /* Add some top padding to the page content to prevent sudden quick movement (as the navigation bar gets a new position at the top of the page (position:fixed and top:0) */
@@ -98,14 +99,15 @@ h2 {
 .jumbotron .transbox {
     margin: 30px;
     padding: 10px;
-    background-color: rgba(0, 0, 0, 0.63);
+    background-color: rgba(255,255,255, 0.2);
     border-radius: 3px;
+    border: solid black 1px;
 }
 
 .jumbotron .transbox h1,
 .jumbotron .transbox h4 {
     margin:  5%;
-    color: white;
+    color: black;
 }
 
 .center {
