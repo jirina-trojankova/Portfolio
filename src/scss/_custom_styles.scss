@@ -6,7 +6,6 @@ body {
     margin: 0;
     font-family: 'Roboto Condensed', sans-serif;
     font-weight: light;
-    //font-family: 'Alegreya Sans', sans-serif;
 }
 
 #logo {
@@ -94,9 +93,13 @@ h2 {
     background-position: center;
     background-repeat: no-repeat;
     background-size: auto 100%;
+    border-top-left-radius: 0px;
+    border-top-right-radius: 0px;
 }
 
-.jumbotron .transbox {
+
+
+.transbox {
     margin: 30px;
     padding: 10px;
     background-color: rgba(255,255,255, 0.2);
@@ -104,9 +107,9 @@ h2 {
     border: solid black 1px;
 }
 
-.jumbotron .transbox h1,
-.jumbotron .transbox h4 {
-    margin:  5%;
+.transbox h1,
+.transbox h4 {
+    margin: 5%;
     color: black;
 }
 
@@ -123,7 +126,6 @@ h2 {
 .light_gray_clr {
     background-color: $light_gray;
 }
-
 
 .my_blue {
     background-color: $my_blue;
@@ -166,15 +168,16 @@ imgabout_me   {
 
 .fa {
     color: $dark_red;
-  }
+}
 
-  .fa:hover {
+.fa:hover {
       color: $primary;
   }
 
 .btn-outline-dark {
     transition: 1s;
 }
+
 .btn-outline-dark:hover {
     background-color: $primary;
     transition: 800ms;
