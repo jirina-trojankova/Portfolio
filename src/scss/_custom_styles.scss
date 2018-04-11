@@ -17,10 +17,6 @@ margin-right: 4rem;
 font-size: 1.8rem;
 }
 
-nav {
-    background-color: $primary;
-    border-radius: 3px;
-}
  /* Style the navbar */
  #navbar {
     overflow: hidden;
@@ -95,6 +91,7 @@ h2 {
     background-size: auto 100%;
     border-top-left-radius: 0px;
     border-top-right-radius: 0px;
+    border: solid black 1px;
 }
 
 
@@ -102,7 +99,7 @@ h2 {
 .transbox {
     margin: 30px;
     padding: 10px;
-    background-color: rgba(255,255,255, 0.2);
+    background-color: rgba(255,255,255, 0.5);
     border-radius: 3px;
     border: solid black 1px;
 }
@@ -151,12 +148,39 @@ h2 {
     padding-left: 10px;
 }
 
+
+#portfolio .btn {
+    background-color: $dark_red;
+    color: #f2f2f2;
+    transition: 800ms;
+}
+
+
+#portfolio .btn:hover,
+#portfolio .btn:focus {
+    background-color: #f0997e;
+    color: #232323;
+}
+
+#portfolio .badge {
+    background-color: $dark_red;
+    color: #f2f2f2;
+}
+
+#portfolio h6 {
+    text-transform: uppercase;
+}
+
+.card-title {
+    text-transform: uppercase;
+}
+
 img {
     border-radius: 3px;
 }
 
-imgabout_me   {
-  margin-top: 5 rem;
+img .about_me  {
+  margin-top: 2 rem;
 }
 
 #contacts {
@@ -168,19 +192,22 @@ imgabout_me   {
 
 .fa {
     color: $dark_red;
+    margin: 2em;
+    transition: 500ms;
 }
 
-.fa:hover {
-      color: $primary;
+.fa:hover,
+.fa:focus {
+    color: #f0997e;
   }
 
 .btn-outline-dark {
-    transition: 1s;
+    transition: 800ms;
 }
 
-.btn-outline-dark:hover {
+.btn-outline-dark:hover,
+.btn-outline-dark:focus {
     background-color: $primary;
-    transition: 800ms;
 }
 
 footer {
