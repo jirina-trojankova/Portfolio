@@ -59,5 +59,6 @@ gulp.task('build', ['css:compile', 'html:copy', 'js:compile', 'static:copy']);
 gulp.task('develop', ['build'], function() {
 	gulp.watch('src/scss/*', ['css:compile']); // watch for changes in SCSS
 	gulp.watch('src/**/*.html', ['html:copy']); // watch for changes in HTML
+	gulp.watch('src/js/*', ['js:compile']); // watch for changes in js - added by Jir - hope it works
 	gulp.watch('src/static/**/*', ['static:copy']); // watch for changes in static files
 });
