@@ -1,11 +1,11 @@
 /*var div = '<div class="square"></div>';*/
 var rowOpen = '<div class="row">';
 var rowClose = '</div>';
-var chessboardSize = 10;
+var chessboardSize = 5;
 var idNumber = 0;
 
 function getNumber() {
-var number = Math.floor((Math.random() * 3) + 1);
+var number = Math.floor((Math.random() * 1) + 1);
 return number;
 }
 
@@ -23,27 +23,38 @@ var id = 1;
 var square = document.getElementById(id);
 square = (square.classList);
 
-
 var right = document.getElementById(id + 1);
 right = (right.classList);
 
 
-if (JSON.stringify(square) === JSON.stringify(right)) {
+while (JSON.stringify(square) === JSON.stringify(right)) {
   console.log(JSON.stringify(square));
   console.log(JSON.stringify(right));
   square = document.getElementById(id);
+  
   square.className += " drench";
 
-  right = document.getElementById(id + 1);
+  console.log(square);
+  console.log(right);
+  square = document.getElementById(id + 1);
+  right = document.getElementById(id + 2);
+  console.log(square);
+  console.log(right);
+
+  square = (square.classList);
+  right = (right.classList);
 }
-console.log(square);
-console.log(right);
 
 
 
 
 
-/*var idString = id.toString();*/
+
+
+/*
+  square = document.getElementById(id + 1);
+
+var idString = id.toString();*/
 /*
 var bottom = document.getElementById('11');
 right.setAttribute('drench');
