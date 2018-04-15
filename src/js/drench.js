@@ -5,7 +5,7 @@ var chessboardSize = 5;
 var idNumber = 0;
 
 function getNumber() {
-var number = Math.floor((Math.random() * 1) + 1);
+var number = Math.floor((Math.random() * 2) + 1);
 return number;
 }
 
@@ -28,24 +28,21 @@ right = (right.classList);
 
 
 while (JSON.stringify(square) === JSON.stringify(right)) {
-  console.log(JSON.stringify(square));
-  console.log(JSON.stringify(right));
   square = document.getElementById(id);
   
   square.className += " drench";
 
-  console.log(square);
-  console.log(right);
-  square = document.getElementById(id + 1);
-  right = document.getElementById(id + 2);
-  console.log(square);
-  console.log(right);
+  id=id+1;
+  square = document.getElementById(id);
+  right = document.getElementById(id + 1);
+
 
   square = (square.classList);
   right = (right.classList);
 }
-
-
+right = document.getElementById(id);
+right.className += " drench";
+console.log(right);
 
 
 
@@ -93,7 +90,7 @@ function changeColor(newColor) {
   square.classList.add(newColor);
 }
 
-
+ 
  
 function makeDrench() {
   var square = document.getElementById('1');
