@@ -4,6 +4,7 @@ var rowClose = '</div>';
 var chessboardSize = 4;
 var idNumber = 0;
 var id = 1;
+
 for (j = 1; j <= chessboardSize; j++) {
   document.write(rowOpen);
   for (i = 1; i <= chessboardSize; i++) {
@@ -47,6 +48,9 @@ function addDrench() {
 
   var right = document.getElementById(id + 1);
   right = (right.classList);
+
+  var bottom = document.getElementById(id * chessboardSize +1);
+console.log(bottom);
 
   while (JSON.stringify(square) === JSON.stringify(right)) {
     square = document.getElementById(id);
@@ -104,7 +108,7 @@ function makeDrench(newColor) {
   // console.log(drench);
 }
 
-//CHANGES FIRST color on click and adds class drench to the same colors
+//CHANGES FIRST COLOR on click and adds class drench to the same colors
 function changeColor(newColor) {
   //in the first square changes color (class)
   var id = 1;
@@ -124,12 +128,9 @@ function changeColor(newColor) {
     
     idRight = idRight + 1;
     right = document.getElementById(idRight);
-    console.log(right); 
    }
    right = document.getElementById(idRight);
-   right.className += " drench";
-   console.log(idRight);
-  
+   right.className += " drench";  
   //HERE i WILL ADD COMPARSION BY JSON.STRINGIFY
   //possibly use function addDrench?
 
@@ -137,6 +138,10 @@ function changeColor(newColor) {
    //BUG - if there are more than one color, the next one doesnt have class drench
    //POSSIBLE SOLUTION - allways check whether the last right has the same color next to it
   }
+  //TO ADD drenching also from top to BOTTOM, also to the LEFT and UP
+  //add counter
+  //add reset
+  //
 
 
 
