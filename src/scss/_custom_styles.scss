@@ -173,6 +173,14 @@ h2 {
     text-transform: uppercase;
 }
 
+#portfolio img {
+    transition: all 0.4s cubic-bezier(.48,-0.44,.55,.95);
+}
+
+#portfolio img:hover {
+    transform: scale(1.1);
+}
+
 .card-title {
     text-transform: uppercase;
 }
@@ -182,7 +190,7 @@ img {
 }
 
 #about img {
-    margin-top: 2 rem;
+    margin: 4 em;
 }
 
 #about a {
@@ -195,6 +203,7 @@ img {
     color: $my_pink;
 }
 
+//contacts is a section just for favicons
 #contacts {
     font-size: 54px;
     display: block;
@@ -202,26 +211,22 @@ img {
     color: $dark_red;
 }
 
+#contacts a {
+    text-decoration: none;
+}
 .fa {
     color: $dark_red;
     margin: 2em;
     transition: 500ms;
-}
 
-#contacts a {
-    text-decoration: none;
 }
+ 
 
 .fa:hover,
 .fa:focus {
     color: #f0997e;
 }
 
-// .i:hover
-// .i:focus {
-//     color: $my_pink;
-//     z-index: 10;
-// }
 .btn-outline-dark {
     transition: 800ms;
 }
@@ -233,4 +238,8 @@ img {
 
 footer {
     margin: 0;
+}
+
+footer  .red h4 {
+    border-radius: 0;
 }
