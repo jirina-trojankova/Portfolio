@@ -179,8 +179,18 @@ img {
     border-radius: 3px;
 }
 
-img .about_me  {
-  margin-top: 2 rem;
+img .about_me {
+    margin-top: 2 rem;
+}
+
+#about a {
+    color: $primary;
+    text-decoration: none;
+}
+
+#about a:hover {
+    text-decoration: none;
+    color: $my_pink;
 }
 
 #contacts {
@@ -196,11 +206,20 @@ img .about_me  {
     transition: 500ms;
 }
 
+#contacts a {
+    text-decoration: none;
+}
+
 .fa:hover,
 .fa:focus {
     color: #f0997e;
   }
 
+// .i:hover
+// .i:focus {
+//     color: $my_pink;
+//     z-index: 10;
+// }
 .btn-outline-dark {
     transition: 800ms;
 }
@@ -211,5 +230,52 @@ img .about_me  {
 }
 
 footer {
-    margin: 3rem;
+    margin: 0;
+}
+
+/* DRENCH */
+
+body {
+/*    background-color: lightgray;*/
+    padding: 25px;
+}
+
+.button {
+    border: solid grey 1px;
+}
+
+.square {
+    height: 25px;
+    width: 25px;
+    border: solid grey 1px;
+}
+
+#square {
+    height: 25px;
+    width: 25px;
+    border: solid grey 1px;
+}
+
+.color1 {
+    background-color: white;
+}
+
+.color2 {
+    background-color: yellow;
+}
+
+.color3 {
+    background-color: red;
+}
+
+.color4 {
+    background-color: blue;
+}
+
+.color5 {
+    background-color: green;
+}
+
+.color6 {
+    background-color: brown;
 }
