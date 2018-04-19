@@ -1,6 +1,7 @@
 html {
     box-sizing: border-box;
 }
+
 body {
     background-color: beige;
     margin: 0;
@@ -9,24 +10,27 @@ body {
 }
 
 #logo {
-color: $dark_red;
-}
-#welcome {
-margin-top: 1rem;
-margin-right: 4rem;
-font-size: 1.8rem;
+    color: $dark_red;
 }
 
- /* Style the navbar */
- #navbar {
+#welcome {
+    margin-top: 1rem;
+    margin-right: 4rem;
+    font-size: 1.8rem;
+}
+
+/* Style the navbar */
+
+#navbar {
     overflow: hidden;
     background-color: $dark_red;
     text-transform: uppercase;
     text-align: right;
-  }
+}
 
-  /* Navbar links */
-  #navbar a {
+/* Navbar links */
+
+#navbar a {
     float: right;
     display: block;
     color: #f2f2f2;
@@ -34,25 +38,28 @@ font-size: 1.8rem;
     padding: 14px;
     text-decoration: none;
     transition: 800ms;
-  }
+}
 
-  /* Page content */
-  .content {
+/* Page content */
+
+.content {
     padding: 16px;
-  }
+}
 
-  /* The sticky class is added to the navbar with JS when it reaches its scroll position */
-  .sticky {
+/* The sticky class is added to the navbar with JS when it reaches its scroll position */
+
+.sticky {
     position: fixed;
     top: 0;
     width: 100%;
     z-index: 1;
-  }
+}
 
-  /* Add some top padding to the page content to prevent sudden quick movement (as the navigation bar gets a new position at the top of the page (position:fixed and top:0) */
-  .sticky + .content {
+/* Add some top padding to the page content to prevent sudden quick movement (as the navigation bar gets a new position at the top of the page (position:fixed and top:0) */
+
+.sticky+.content {
     padding-top: 60px;
-  }
+}
 
 #navbar a:hover,
 #navbar a:focus {
@@ -63,7 +70,7 @@ font-size: 1.8rem;
 h1 {
     color: white;
     font-size: 3.5rem;
-    }
+}
 
 h2 {
     background-color: $primary;
@@ -94,12 +101,10 @@ h2 {
     border: solid black 1px;
 }
 
-
-
 .transbox {
     margin: 30px;
     padding: 10px;
-    background-color: rgba(255,255,255, 0.5);
+    background-color: rgba(255, 255, 255, 0.5);
     border-radius: 3px;
     border: solid black 1px;
 }
@@ -131,7 +136,7 @@ h2 {
 }
 
 #my_progress {
-    width:  100%;
+    width: 100%;
     padding: 5px;
     background-color: $light_gray;
     border-radius: 3px;
@@ -141,13 +146,12 @@ h2 {
     width: 0%;
     height: 1.8rem;
     background-color: $my_blue;
-    margin-bottom:  5px;
+    margin-bottom: 5px;
     padding: 5px;
     border-radius: 3px;
     color: rgb(74, 68, 116);
     padding-left: 10px;
 }
-
 
 #portfolio .btn {
     background-color: $dark_red;
@@ -155,10 +159,8 @@ h2 {
     transition: 800ms;
 }
 
-
-#portfolio .btn:hover,
-#portfolio .btn:focus {
-    background-color: #f0997e;
+#portfolio .btn:hover {
+    background-color: $my_pink;
     color: #232323;
 }
 
@@ -179,7 +181,7 @@ img {
     border-radius: 3px;
 }
 
-img .about_me {
+#about img {
     margin-top: 2 rem;
 }
 
@@ -213,7 +215,7 @@ img .about_me {
 .fa:hover,
 .fa:focus {
     color: #f0997e;
-  }
+}
 
 // .i:hover
 // .i:focus {
@@ -231,51 +233,4 @@ img .about_me {
 
 footer {
     margin: 0;
-}
-
-/* DRENCH */
-
-body {
-/*    background-color: lightgray;*/
-    padding: 25px;
-}
-
-.button {
-    border: solid grey 1px;
-}
-
-.square {
-    height: 25px;
-    width: 25px;
-    border: solid grey 1px;
-}
-
-#square {
-    height: 25px;
-    width: 25px;
-    border: solid grey 1px;
-}
-
-.color1 {
-    background-color: white;
-}
-
-.color2 {
-    background-color: yellow;
-}
-
-.color3 {
-    background-color: red;
-}
-
-.color4 {
-    background-color: blue;
-}
-
-.color5 {
-    background-color: green;
-}
-
-.color6 {
-    background-color: brown;
 }
