@@ -218,17 +218,15 @@ img {
     color: $dark_red;
     margin: 2em;
     transition: 500ms;
-
 }
  
-
 .fa:hover,
 .fa:focus {
     color: #f0997e;
 }
 
 .btn-outline-dark {
-    transition: 800ms;
+    transition: 500ms;
 }
 
 .btn-outline-dark:hover,
