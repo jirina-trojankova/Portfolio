@@ -1,7 +1,7 @@
 <?php 
 mb_internal_encoding("UTF-8"); 
 $say = ''; 
-if (isset($_GET['success'])) 
+if (isset($_GET['success'])) //checks whether it is something in the field
     $say = 'Your e-mail has been sent I will get back to you ASAP.'; 
  
  
@@ -12,24 +12,25 @@ if ($_POST) {
     isset($_POST['phone']) && $_POST['phone'] && 
     isset($_POST['message']) && $_POST['message']) 
     { 
+        //sending an email:
         $header = 'From:' . $_POST['email']; 
         $header .= "\nMIME-Version: 1.0\n"; 
         $header .= 'Content-Type: text/html; charset=\"utf-8\"\n'; 
         $address = 'jirina.trojankova@seznam.cz'; 
-        $subject = 'New message from mailform?'; 
+        $subject = 'New message from mailform Jirina'; 
         $success = mb_send_mail($address, $subject, $_POST['mail'], $header); 
         if ($success) { 
-            header('Location: index.php?success=yes'); 
+            $say = 'Email byl úspěšně odeslán, brzy vám odpovím.';
+            header('Location: mailform.php?succes=yes'); 
             exit; 
-        } else 
+         }else {
             $say = 'Your e-mail has not been sent. Check the address.'; 
-        } 
-    else { 
-        $say = 'Fill it correctly!'; 
+        }
     } 
- 
+    else { 
+        $say = 'Form has not been filled correctly..'; 
+    } 
 } 
- 
 ?> 
 <!DOCTYPE html>
 <html lang="en">
@@ -305,11 +306,12 @@ $('#my_progress').on('appear', function(){
             <div class="light_gray red">
             <h4>Send me a message</h4> 
  
- <?php if ($say) echo '<p>' . htmlspecialchars$say . '</p>'; 
+ <?php if ($say) 
+        echo ('<p>' . htmlspecialchars($say) . '</p>'); 
 
  $firstname = (isset($_POST['firstname'])) ? $_POST['firstname'] : ''; 
  $lastname = (isset($_POST['lastname'])) ? $_POST['lastname'] : ''; 
- $email = (isset($_POST['email'])) ? $_POST['email'] : ''; 
+ $mail = (isset($_POST['mail'])) ? $_POST['mail'] : ''; 
  $phone = (isset($_POST['phone'])) ? $_POST['phone'] : ''; 
  $message = (isset($_POST['message'])) ? $_POST['message'] : ''; 
 
@@ -348,7 +350,7 @@ $('#my_progress').on('appear', function(){
                         <br/>
 
                         <label for="message">Message</label>
-                        <textarea name="message" id="message" cols="30" rows="10" class="form-control" placeholder="Your message" value="<?= htmlspecialchars($message) ?>"></textarea>
+                        <textarea name="message" id="message" cols="30" rows="10" class="form-control" placeholder="Your message"><?= htmlspecialchars($message) ?></textarea>
                         <br/>
 
                         <button type="button" class="btn btn-outline-dark">Send your message</button>
