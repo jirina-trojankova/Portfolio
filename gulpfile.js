@@ -40,6 +40,17 @@ gulp.task('js:compile', ['js:clean'], function() {
 		.pipe(gulp.dest('dist/js'));
 });
 
+// Delete all PHP files
+gulp.task('php:clean', function() {
+	return del('dist/**/*.php', { force: true });
+});
+
+// Copy all PHP files 
+gulp.task('php:copy', ['php:clean'], function() {
+	return gulp.src('src/**/*.php')
+		.pipe(gulp.dest('dist/'));
+});
+
 // Delete all static files such as images etc.
 gulp.task('static:clean', function() {
 	return del([
@@ -54,11 +65,12 @@ gulp.task('static:copy', ['static:clean'], function() {
 			.pipe(gulp.dest('dist'));
 });
 
-gulp.task('build', ['css:compile', 'html:copy', 'js:compile', 'static:copy']);
+gulp.task('build', ['css:compile', 'html:copy', 'js:compile', 'php:copy', 'static:copy']);
 
 gulp.task('develop', ['build'], function() {
 	gulp.watch('src/scss/*', ['css:compile']); // watch for changes in SCSS
+	gulp.watch('src/js/*', ['js:compile']); // watch for changes in JavaScript
 	gulp.watch('src/**/*.html', ['html:copy']); // watch for changes in HTML
-	gulp.watch('src/js/*', ['js:compile']); // watch for changes in js - added by Jir - hope it works
+	gulp.watch('src/**/*.php', ['php:copy']); // watch for changes in PHP
 	gulp.watch('src/static/**/*', ['static:copy']); // watch for changes in static files
 });
