@@ -19,13 +19,12 @@ if ($_POST) {
         $subject = 'New message from mailform?'; 
         $success = mb_send_mail($address, $subject, $_POST['mail'], $header); 
         if ($success) { 
-            $say = 'Your e-mail has been sent I will get back to you ASAP.'; 
-            header('Location: mailform.php?success=yes'); 
+            header('Location: index.php?success=yes'); 
             exit; 
-        } else { 
+        } else 
             $say = 'Your e-mail has not been sent. Check the address.'; 
         } 
-    } else { 
+    else { 
         $say = 'Fill it correctly!'; 
     } 
  
@@ -121,6 +120,9 @@ if ($_POST) {
         <br/>
 
         <section id="skills"  class="container">
+        <br/>
+        <br/>
+        <br/>
             <h2>My skills</h2>
             <div id="my_progress">
 
@@ -162,6 +164,7 @@ $('#my_progress').on('appear', function(){
 
 
         <section id="portfolio" class="container">
+        <br/>
         <br/>
         <br/>
             <h2>My Portfolio</h2>
@@ -252,7 +255,9 @@ $('#my_progress').on('appear', function(){
 
 
         <section id="about" class="container">
-
+        <br/>
+        <br/>
+        <br/>
             <h2>About me</h2>
             <div class="about_me container">
 
@@ -279,6 +284,9 @@ $('#my_progress').on('appear', function(){
 
 
         <section id="contact" class="container">
+        <br/>
+        <br/>
+        <br/>
             <h2>Contact me</h2>
 
             <h4>Find me here:</h4>
@@ -297,9 +305,9 @@ $('#my_progress').on('appear', function(){
             <div class="light_gray red">
             <h4>Send me a message</h4> 
  
- <?php if ($say) echo '<p>' . $say . '</p>'; 
+ <?php if ($say) echo '<p>' . htmlspecialchars$say . '</p>'; 
 
- $firstname = (isset($_POST['first_name'])) ? $_POST['firstname'] : ''; 
+ $firstname = (isset($_POST['firstname'])) ? $_POST['firstname'] : ''; 
  $lastname = (isset($_POST['lastname'])) ? $_POST['lastname'] : ''; 
  $email = (isset($_POST['email'])) ? $_POST['email'] : ''; 
  $phone = (isset($_POST['phone'])) ? $_POST['phone'] : ''; 
@@ -316,11 +324,12 @@ $('#my_progress').on('appear', function(){
                         <div class="row">
                             <div class="col">
                                 <label for="firstname">First Name</label>
-                                <input type="text" id="firstname" name="firstname" class="form-control" placeholder="First name">
+                                <input type="text" id="firstname" name="firstname" class="form-control" placeholder="First name" value="<?= htmlspecialchars($firstname) ?>">
                             </div>
+
                             <div class="col">
                                 <label for="lastname">Last Name</label>
-                                <input type="text" id="lastname" name="lastname" class="form-control" placeholder="Last name">
+                                <input type="text" id="lastname" name="lastname" class="form-control" placeholder="Last name" value="<?= htmlspecialchars($lastname) ?>">
                             </div>
                         </div>
                         <br/>
@@ -328,18 +337,18 @@ $('#my_progress').on('appear', function(){
                         <div class="row">
                             <div class="col">
                                 <label for="email">E-mail</label>
-                                <input type="email" id="email" name="email" class="form-control" placeholder="E-mail">
+                                <input type="email" id="email" name="email" class="form-control" placeholder="E-mail" value="<?= htmlspecialchars($email) ?>">
                             </div>
-                            <div class="col">
 
+                            <div class="col">
                                 <label for="phone">Phone</label>
-                                <input type="tel" id="phone" name="phone" class="form-control" placeholder="Phone">
+                                <input type="tel" id="phone" name="phone" class="form-control" placeholder="Phone" value="<?= htmlspecialchars($phone) ?>">
                             </div>
                         </div>
                         <br/>
 
                         <label for="message">Message</label>
-                        <textarea name="message" id="message" cols="30" rows="10" class="form-control" placeholder="Your message"></textarea>
+                        <textarea name="message" id="message" cols="30" rows="10" class="form-control" placeholder="Your message" value="<?= htmlspecialchars($message) ?>"></textarea>
                         <br/>
 
                         <button type="button" class="btn btn-outline-dark">Send your message</button>
