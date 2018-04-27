@@ -305,7 +305,7 @@ $('#my_progress').on('appear', function(){
             <div class="light_gray red">
             <h4>Send me a message</h4> 
  
- <?php if ($say) echo '<p>' . htmlspecialchars$say . '</p>'; 
+ <?php if ($say) echo '<p>' . htmlspecialchars($say) . '</p>'; 
 
  $firstname = (isset($_POST['firstname'])) ? $_POST['firstname'] : ''; 
  $lastname = (isset($_POST['lastname'])) ? $_POST['lastname'] : ''; 
