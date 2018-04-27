@@ -167,11 +167,6 @@ $('#my_progress').on('appear', function(){
             <h2>My Portfolio</h2>
             <div class="row">
 
-
-                
-
-               
-
                 <article class="col-sm-6 col-md-6 col-lg-3">
                     <div class="card mb-4">
                         <div class="light_gray_card  light_gray_clr">
