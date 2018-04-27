@@ -1,7 +1,7 @@
 <?php 
 mb_internal_encoding("UTF-8"); 
 $say = ''; 
-if (isset($_GET['success'])) //checks whether it is something in the field
+if (isset($_GET['success'])) 
     $say = 'Your e-mail has been sent I will get back to you ASAP.'; 
  
  
@@ -12,25 +12,24 @@ if ($_POST) {
     isset($_POST['phone']) && $_POST['phone'] && 
     isset($_POST['message']) && $_POST['message']) 
     { 
-        //sending an email:
-        $header = 'From:' . $_POST['mail']; 
+        $header = 'From:' . $_POST['email']; 
         $header .= "\nMIME-Version: 1.0\n"; 
         $header .= 'Content-Type: text/html; charset=\"utf-8\"\n'; 
         $address = 'jirina.trojankova@seznam.cz'; 
-        $subject = 'New message from mailform Jirina'; 
-        $success = mb_send_mail($address, $subject, $_POST['mail'], $header); 
+        $subject = 'New message from mailform?'; 
+        $success = mb_send_mail($address, $subject, $_POST['email'], $header); 
         if ($success) { 
-            $say = 'Email byl úspěšně odeslán, brzy vám odpovím.';
-            header('Location:index1.php#contact?succes=yes'); 
+            header('Location: index.php?success=yes'); 
             exit; 
-         }else {
+        } else 
             $say = 'Your e-mail has not been sent. Check the address.'; 
-        }
-    } 
+        } 
     else { 
-        $say = 'Form has not been filled correctly..'; 
+        $say = 'Fill it correctly!'; 
     } 
+ 
 } 
+ 
 ?> 
 <!DOCTYPE html>
 <html lang="en">
@@ -306,14 +305,14 @@ $('#my_progress').on('appear', function(){
             <div class="light_gray red">
             <h4>Send me a message</h4> 
  
- <?php if ($say) 
-        echo ('<p>' . htmlspecialchars($say) . '</p>'); 
+ <?php if ($say) echo '<p>' . htmlspecialchars($say) . '</p>'; 
 
  $firstname = (isset($_POST['firstname'])) ? $_POST['firstname'] : ''; 
  $lastname = (isset($_POST['lastname'])) ? $_POST['lastname'] : ''; 
- $mail = (isset($_POST['mail'])) ? $_POST['mail'] : ''; 
+ $email = (isset($_POST['email'])) ? $_POST['email'] : ''; 
  $phone = (isset($_POST['phone'])) ? $_POST['phone'] : ''; 
  $message = (isset($_POST['message'])) ? $_POST['message'] : ''; 
+
  ?> 
 
 
@@ -338,7 +337,7 @@ $('#my_progress').on('appear', function(){
                         <div class="row">
                             <div class="col">
                                 <label for="email">E-mail</label>
-                                <input type="email" id="email" name="email" class="form-control" placeholder="your@email.cz" value="<?= htmlspecialchars($mail) ?>">
+                                <input type="email" id="email" name="email" class="form-control" placeholder="E-mail" value="<?= htmlspecialchars($email) ?>">
                             </div>
 
                             <div class="col">
@@ -349,10 +348,8 @@ $('#my_progress').on('appear', function(){
                         <br/>
 
                         <label for="message">Message</label>
-                        <textarea name="message" id="message" cols="30" rows="10" class="form-control" placeholder="Your message"><?= htmlspecialchars($message) ?></textarea>
+                        <textarea name="message" id="message" cols="30" rows="10" class="form-control" placeholder="Your message" value="<?= htmlspecialchars($message) ?>"></textarea>
                         <br/>
-
-                        <input type="submit" value="send">
 
                         <button type="button" class="btn btn-outline-dark">Send your message</button>
                     </div>
