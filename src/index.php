@@ -7,7 +7,7 @@ if ($_POST) // V poli _POST něco je, odeslal se formulář
                 isset($_POST['lastname']) && $_POST['lastname'] &&
                 isset($_POST['email']) && $_POST['email'] &&
                 isset($_POST['phone']) && $_POST['phone'] &&
-                isset($_POST['message']) && $_POST['message']
+                isset($_POST['message']) && $_POST['message'])
         {
             $hlavicka = 'From:' . $_POST['email'];
             $hlavicka .= "\nMIME-Version: 1.0\n";
