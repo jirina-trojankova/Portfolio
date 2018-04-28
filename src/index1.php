@@ -4,7 +4,7 @@ $say = '';
 if (isset($_GET['success'])) //checks whether it is something in the field
     $say = 'Your e-mail has been sent I will get back to you ASAP.'; 
  
- 
+// V poli _POST něco je, odeslal se formulář
 if ($_POST) { 
     if(isset($_POST['firstname']) && $_POST['firstname'] && 
     isset($_POST['lastname']) && $_POST['lastname'] && 
@@ -21,7 +21,7 @@ if ($_POST) {
         $success = mb_send_mail($address, $subject, $_POST['mail'], $header); 
         if ($success) { 
             $say = 'Email byl úspěšně odeslán, brzy vám odpovím.';
-            header('Location:index1.php#contact?succes=yes'); 
+            header('Location:index1.php#contact&success=yes'); 
             exit; 
          }else {
             $say = 'Your e-mail has not been sent. Check the address.'; 
