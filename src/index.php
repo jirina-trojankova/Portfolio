@@ -20,7 +20,7 @@ if (isset($_GET['uspech']))
             if ($uspech)
             {
                 $hlaska = 'Email byl úspěšně odeslán, brzy vám odpovíme.';
-                header('Location: http://jirinat.data4you.cz#contact?uspech=ano');
+                header('Location: http://jirinat.data4you.cz#message');
                 //http://www.test.com/index.htm?name1=value1&name2=value2
                 exit;            }
             else
@@ -324,7 +324,7 @@ if (isset($_GET['uspech']))
             <br/>
             <br/>
             <br/>
-            <div class="light_gray red">
+            <div id="message" class="light_gray red">
                 <h4>Send me a message</h4>
 
 
