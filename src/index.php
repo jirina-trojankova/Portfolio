@@ -20,7 +20,7 @@ if (isset($_GET['uspech']))
             if ($uspech)
             {
                 $hlaska = 'Email byl úspěšně odeslán, brzy vám odpovíme.';
-                header('Location: #message');
+                header('Location: #message?uspech=ano');
                 //http://www.test.com/index.htm?name1=value1&name2=value2
                 exit;            
             }
@@ -132,9 +132,9 @@ if (isset($_GET['uspech']))
                 <div id="bar1" class="bar">HTML 80%</div>
                 <div id="bar2" class="bar">CSS, Sass 70%</div>
                 <div id="bar3" class="bar">JavaScript 70%</div>
-                <div id="bar4" class="bar">React 60%</div>
+                <div id="bar4" class="bar">React 50%</div>
                 <div id="bar5" class="bar">jQuery 70%</div>
-                <div id="bar6" class="bar">PHP 60%</div>
+                <div id="bar6" class="bar">PHP 70%</div>
                 <div id="bar7" class="bar">Laravel 60%</div>
                 <div id="bar8" class="bar">UX 50%</div>
             </div>
@@ -154,9 +154,9 @@ if (isset($_GET['uspech']))
                     my_progress('#bar1', '80%');
                     my_progress('#bar2', '70%');
                     my_progress('#bar3', '70%');
-                    my_progress('#bar4', '60%');
+                    my_progress('#bar4', '50%');
                     my_progress('#bar5', '70%');
-                    my_progress('#bar6', '60%');
+                    my_progress('#bar6', '70%');
                     my_progress('#bar7', '60%');
                     my_progress('#bar8', '50%');
                 });
@@ -314,7 +314,7 @@ if (isset($_GET['uspech']))
                 <?php
                  if ($hlaska)
                      echo('<p>' . htmlspecialchars($hlaska) . '</p>');
-                     
+
                     $firstname = (isset($_POST['firstname'])) ? $_POST['firstname'] : '';
                     $lastname = (isset($_POST['lastname'])) ? $_POST['lastname'] : '';
                     $email = (isset($_POST['email'])) ? $_POST['email'] : '';
@@ -369,7 +369,6 @@ if (isset($_GET['uspech']))
             <div class="d-flex justify-content-end">
                 <p>Copyright &copy;Jiřina Trojánková 2018</p>
         </footer>
-        <script src="jquery-3.3.1.min.js"></script>
         <script>
             // When the user scrolls the page, execute myFunction
             window.onscroll = function () {
