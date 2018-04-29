@@ -216,7 +216,8 @@ img {
 }
 .fa {
     color: $dark_red;
-    margin: 2em;
+    margin-right: 2em;
+    margin-left: 2em;
     transition: 500ms;
 }
  
@@ -240,4 +241,9 @@ footer {
 
 footer  .red h4 {
     border-radius: 0;
+    padding-left:  1rem;
+}
+
+footer  p {
+    padding-right:  1rem;
 }
