@@ -17,7 +17,10 @@ if ($_POST) // V poli _POST něco je, odeslal se formulář
             $uspech = mb_send_mail($adresa, $predmet, $_POST['message'], $hlavicka);
             if ($uspech)
             {
-                    $hlaska = 'Email byl úspěšně odeslán, brzy vám odpovíme.';
+                $hlaska = 'Email byl úspěšně odeslán, brzy vám odpovíme.';
+                header('Location: #message');
+                //http://www.test.com/index.htm?name1=value1&name2=value2
+                exit;            
             }
             else
                     $hlaska = 'Email se nepodařilo odeslat. Zkontrolujte adresu.';
@@ -330,7 +333,7 @@ if ($_POST) // V poli _POST něco je, odeslal se formulář
 
 <?php
         if ($hlaska)
-                echo('<p>' . $hlaska . '</p>');
+                echo('<p>' . htmlspecialchars($hlaska) . '</p>');
 ?>
             <form method="POST" class="form-contact">
 
