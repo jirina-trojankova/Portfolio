@@ -69,9 +69,9 @@ if (isset($_GET['uspech']))
 
 
         </header>
-        <section id="home">
-            <main id="content" class="container">
 
+        <main id="content" class="container">
+            <section id="home">
 
                 <div class="jumbotron">
                     <div class="transbox">
@@ -117,201 +117,203 @@ if (isset($_GET['uspech']))
                         </p>
                     </div>
                 </div>
-        </section>
-        <br/>
-        <br/>
-
-        <section id="skills" class="container">
+            </section>
             <br/>
             <br/>
-            <br/>
-            <h2>My skills</h2>
-            <div id="my_progress">
+
+            <section id="skills" class="container">
+                <br/>
+                <br/>
+                <br/>
+                <h2>My skills</h2>
+                <div id="my_progress">
 
 
-                <div id="bar1" class="bar">HTML 80%</div>
-                <div id="bar2" class="bar">CSS, Sass 70%</div>
-                <div id="bar3" class="bar">JavaScript 70%</div>
-                <div id="bar4" class="bar">React 50%</div>
-                <div id="bar5" class="bar">jQuery 70%</div>
-                <div id="bar6" class="bar">PHP 70%</div>
-                <div id="bar7" class="bar">Laravel 60%</div>
-                <div id="bar8" class="bar">UX 50%</div>
-            </div>
-
-            <script src="/js/jquery-3.3.1.min.js"></script>
-            <script src="/js/jquery.appear.js"></script>
-
-            <script>
-                $('#my_progress').appear();
-
-                function my_progress(barID, value) {
-                    $(barID).delay(500).animate({
-                        'width': value
-                    }, 500);
-                }
-                $('#my_progress').on('appear', function () {
-                    my_progress('#bar1', '80%');
-                    my_progress('#bar2', '70%');
-                    my_progress('#bar3', '70%');
-                    my_progress('#bar4', '50%');
-                    my_progress('#bar5', '70%');
-                    my_progress('#bar6', '70%');
-                    my_progress('#bar7', '60%');
-                    my_progress('#bar8', '50%');
-                });
-            </script>
-        </section>
-        <br/>
-        <br/>
-
-
-
-
-        <section id="portfolio" class="container">
-            <br/>
-            <br/>
-            <br/>
-            <h2>My Portfolio</h2>
-            <div class="card-deck">
-                <div class="row">
-
-                    <article class="col-sm-6 col-md-6 col-lg-4">
-                        <div class="card mb-4">
-                            <div class="light_gray_card  light_gray_clr">
-                                <a href="http://journy.data4you.cz" target="blank">
-                                    <img class="card-img-top" src="/img/journy.jpg" alt="journey">
-                                </a>
-                                <div class="card-body">
-                                    <h5 class="card-title">Journy</h5>
-                                    <p class="card-text">Platform where travellers and locals meet. We made this as our Bootcamp project with
-                                        two other people. Still in progress.</p>
-                                    <h6>Tech stack:</h6>
-                                    <ul class="list-unstyled">
-                                        <li class="badge badge-secondary">HTML 5</li>
-                                        <li class="badge badge-secondary">CSS</li>
-                                        <li class="badge badge-secondary">PHP</li>
-                                        <li class="badge badge-secondary">Laravel</li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <a class="btn" href="http://journy.data4you.cz" target="blank">Let's see</a>
-                        </div>
-                    </article>
-
-                    <article class="col-sm-6 col-md-6 col-lg-4">
-                        <div class="card mb-4">
-                            <div class="light_gray_card  light_gray_clr">
-                                <a href="/drench" target="blank">
-                                    <img class="card-img-top" src="/img/drench.jpg" alt="drench">
-                                </a>
-                                <div class="card-body">
-                                    <h5 class="card-title">Drench</h5>
-                                    <p class="card-text">I love this game. Beta version is out, test it!</p>
-                                    <br/>
-                                    <br/>
-                                    <h6>Tech stack:</h6>
-                                    <ul class="list-unstyled">
-                                        <li class="badge badge-secondary">JavaScript</li>
-                                        <li class="badge badge-secondary">HTML 5</li>
-                                        <li class="badge badge-secondary">CSS</li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <a class="btn" href="/drench" target="blank">Let's see</a>
-                        </div>
-                    </article>
-
-                    <article class="col-sm-6 col-md-6 col-lg-4">
-                        <div class="card mb-4">
-                            <div class="light_gray_card  light_gray_clr">
-                                <a href="/coffee" target="blank">
-                                    <img class="card-img-top" src="/img/coffee.jpg" alt="Generic hipster coffee">
-                                </a>
-                                <div class="card-body">
-                                    <h5 class="card-title">Generic hipster coffee</h5>
-                                    <p class="card-text">We created this fully responsive page during first winter hackathon in Coding Bootcamp
-                                        Praha</p>
-                                    <h6>Tech stack:</h6>
-                                    <ul class="list-unstyled">
-                                        <li class="badge badge-secondary">HTML 5</li>
-                                        <li class="badge badge-secondary">CSS</li>
-                                        <li class="badge badge-secondary">SASS</li>
-                                        <li class="badge badge-secondary">gulp</li>
-                                        <li class="badge badge-secondary">bootstrap</li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <a class="btn" href="/coffee" target="blank">Let's see</a>
-                        </div>
-                    </article>
-
+                    <div id="bar1" class="bar">HTML 80%</div>
+                    <div id="bar2" class="bar">CSS, Sass 70%</div>
+                    <div id="bar3" class="bar">JavaScript 70%</div>
+                    <div id="bar4" class="bar">React 50%</div>
+                    <div id="bar5" class="bar">jQuery 70%</div>
+                    <div id="bar6" class="bar">PHP 70%</div>
+                    <div id="bar7" class="bar">Laravel 60%</div>
+                    <div id="bar8" class="bar">UX 50%</div>
                 </div>
-            </div>
-        </section>
-        <br/>
-        <br/>
 
+                <script src="/js/jquery-3.3.1.min.js"></script>
+                <script src="/js/jquery.appear.js"></script>
 
+                <script>
+                    $('#my_progress').appear();
 
-        <section id="about" class="container">
+                    function my_progress(barID, value) {
+                        $(barID).delay(500).animate({
+                            'width': value
+                        }, 500);
+                    }
+                    $('#my_progress').on('appear', function () {
+                        my_progress('#bar1', '80%');
+                        my_progress('#bar2', '70%');
+                        my_progress('#bar3', '70%');
+                        my_progress('#bar4', '50%');
+                        my_progress('#bar5', '70%');
+                        my_progress('#bar6', '70%');
+                        my_progress('#bar7', '60%');
+                        my_progress('#bar8', '50%');
+                    });
+                </script>
+            </section>
             <br/>
             <br/>
-            <br/>
-            <h2>About me</h2>
-            <div class="about_me container">
 
-                <div class="row">
-                    <div class="image col-sm-6 col-md-5 col-lg-3">
 
-                        <img src="/img/fotka2.jpg" alt="It’s me, Jiřina Trojánková" height="200px lg-300px" width="200px">
+
+
+            <section id="portfolio" class="container">
+                <br/>
+                <br/>
+                <br/>
+                <h2>My Portfolio</h2>
+                <div class="card-deck">
+                    <div class="row">
+
+                        <article class="col-sm-6 col-md-6 col-lg-4">
+                            <div class="card mb-4">
+                                <div class="light_gray_card  light_gray_clr">
+                                    <a href="http://journy.data4you.cz" target="blank">
+                                        <img class="card-img-top" src="/img/journy.jpg" alt="journey">
+                                    </a>
+                                    <div class="card-body">
+                                        <h5 class="card-title">Journy</h5>
+                                        <p class="card-text">Platform where travellers and locals meet. We made this as our Bootcamp project with
+                                            two other people. Still in progress.</p>
+                                        <h6>Tech stack:</h6>
+                                        <ul class="list-unstyled">
+                                            <li class="badge badge-secondary">HTML 5</li>
+                                            <li class="badge badge-secondary">CSS</li>
+                                            <li class="badge badge-secondary">PHP</li>
+                                            <li class="badge badge-secondary">Laravel</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <a class="btn" href="http://journy.data4you.cz" target="blank">Let's see</a>
+                            </div>
+                        </article>
+
+                        <article class="col-sm-6 col-md-6 col-lg-4">
+                            <div class="card mb-4">
+                                <div class="light_gray_card  light_gray_clr">
+                                    <a href="/drench" target="blank">
+                                        <img class="card-img-top" src="/img/drench.jpg" alt="drench">
+                                    </a>
+                                    <div class="card-body">
+                                        <h5 class="card-title">Drench</h5>
+                                        <p class="card-text">I love this game. Beta version is out, test it!</p>
+                                        <br/>
+                                        <br/>
+                                        <h6>Tech stack:</h6>
+                                        <ul class="list-unstyled">
+                                            <li class="badge badge-secondary">JavaScript</li>
+                                            <li class="badge badge-secondary">HTML 5</li>
+                                            <li class="badge badge-secondary">CSS</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <a class="btn" href="/drench" target="blank">Let's see</a>
+                            </div>
+                        </article>
+
+                        <article class="col-sm-6 col-md-6 col-lg-4">
+                            <div class="card mb-4">
+                                <div class="light_gray_card  light_gray_clr">
+                                    <a href="/coffee" target="blank">
+                                        <img class="card-img-top" src="/img/coffee.jpg" alt="Generic hipster coffee">
+                                    </a>
+                                    <div class="card-body">
+                                        <h5 class="card-title">Generic hipster coffee</h5>
+                                        <p class="card-text">We created this fully responsive page during first winter hackathon in Coding Bootcamp
+                                            Praha
+                                        </p>
+                                        <h6>Tech stack:</h6>
+                                        <ul class="list-unstyled">
+                                            <li class="badge badge-secondary">HTML 5</li>
+                                            <li class="badge badge-secondary">CSS</li>
+                                            <li class="badge badge-secondary">SASS</li>
+                                            <li class="badge badge-secondary">gulp</li>
+                                            <li class="badge badge-secondary">bootstrap</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <a class="btn" href="/coffee" target="blank">Let's see</a>
+                            </div>
+                        </article>
 
                     </div>
-                    <div class="my_text col-sm-6 col-md-7 col-lg-9">
-                        <p>My name is Jiřina Trojánková. I am a full-stack web developer. I am developing user interfaces in
-                            JavaScript and React and backend of my projects in PHP and Laravel. I enjoy learning new trends.</p>
-                        <p>I am open to learning new technologies and enjoy working with people who are as passionate about
-                            all web-related as me.</p>
-                        <p>I like travelling and I am based in Prague, Czech Republic.</p>
-                        <p>I like horseriding, cycling and snowboarding. If I do not develop, you can also meet me trekking
-                            in the mountains.
-                        </p>
-                        <p>You can read some more info about me in Czech
-                            <a href="http://jirina.wz.cz/index.php?stranka=omne" target="blank">HERE</a>
-                        </p>
-                        <p>Get in touch and let's create something great together.</p>
+                </div>
+            </section>
+            <br/>
+            <br/>
+
+
+
+            <section id="about" class="container">
+                <br/>
+                <br/>
+                <br/>
+                <h2>About me</h2>
+                <div class="about_me container">
+
+                    <div class="row">
+                        <div class="image col-sm-6 col-md-5 col-lg-3">
+
+                            <img src="/img/fotka2.jpg" alt="It’s me, Jiřina Trojánková" height="200px">
+
+                        </div>
+                        <div class="my_text col-sm-6 col-md-7 col-lg-9">
+                            <p>My name is Jiřina Trojánková. I am a full-stack web developer. I am developing user interfaces
+                                in JavaScript and React and backend of my projects in PHP and Laravel. I enjoy learning new
+                                trends.</p>
+                            <p>I am open to learning new technologies and enjoy working with people who are as passionate about
+                                all web-related as me.</p>
+                            <p>I like travelling and I am based in Prague, Czech Republic.</p>
+                            <p>I like horseriding, cycling and snowboarding. If I do not develop, you can also meet me trekking
+                                in the mountains.
+                            </p>
+                            <p>You can read some more info about me in Czech
+                                <a href="http://jirina.wz.cz/index.php?stranka=omne" target="blank">HERE</a>
+                            </p>
+                            <p>Get in touch and let's create something great together.</p>
+                        </div>
                     </div>
                 </div>
-            </div>
-        </section>
-        <br/>
-        <br/>
+            </section>
+            <br/>
+            <br/>
 
 
 
-        <section id="contact" class="container">
-            <br/>
-            <br/>
-            <br/>
-            <h2>Contact me</h2>
+            <section id="contact" class="container">
+                <br/>
+                <br/>
+                <br/>
+                <h2>Contact me</h2>
 
-            <h4>Find me here:</h4>
-            <div id="contacts">
-                <a href="https://github.com/jirina-trojankova" target="blank">
-                    <i class="fa fa-github"></i>
-                </a>
-                <a href="https://www.linkedin.com/in/jirina-trojankova" target="blank">
-                    <i class="fa fa-linkedin-square"></i>
-                </a>
-            </div>
-            <br/>
-            <br/>
-            <br/>
-            <div id="message" class="light_gray red">
-                <h4>Send me a message</h4>
+                <h4>Find me here:</h4>
+                <div id="contacts">
+                    <a href="https://github.com/jirina-trojankova" target="blank">
+                        <i class="fa fa-github"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/in/jirina-trojankova" target="blank">
+                        <i class="fa fa-linkedin-square"></i>
+                    </a>
+                </div>
+                <br/>
+                <br/>
+                <br/>
+                <div id="form" class="light_gray red">
+                    <h4>Send me a message</h4>
 
 
-                <?php
+                    <?php
                  if ($hlaska)
                      echo('<p>' . htmlspecialchars($hlaska) . '</p>');
 
@@ -320,45 +322,47 @@ if (isset($_GET['uspech']))
                     $email = (isset($_POST['email'])) ? $_POST['email'] : '';
                     $message = (isset($_POST['message'])) ? $_POST['message'] : '';
                 ?>
-                    <form method="POST" class="form-contact">
+                        <form method="POST" class="form-contact">
 
-                        <div class="form-group">
+                            <div class="form-group">
 
-                            <div class="row">
-                                <div class="col">
-                                    <label for="firstname">First Name</label>
-                                    <input type="text" id="firstname" name="firstname" class="form-control" placeholder="First name" value="<?= htmlspecialchars($firstname) ?>">
+                                <div class="row">
+                                    <div class="col">
+                                        <label for="firstname">First Name</label>
+                                        <input type="text" id="firstname" name="firstname" class="form-control" placeholder="First name" value="<?= htmlspecialchars($firstname) ?>">
+                                    </div>
+                                    <div class="col">
+                                        <label for="lastname">Last Name</label>
+                                        <input type="text" id="lastname" name="lastname" class="form-control" placeholder="Last name" value="<?= htmlspecialchars($lastname) ?>">
+                                    </div>
                                 </div>
-                                <div class="col">
-                                    <label for="lastname">Last Name</label>
-                                    <input type="text" id="lastname" name="lastname" class="form-control" placeholder="Last name" value="<?= htmlspecialchars($lastname) ?>">
+                                <br/>
+
+                                <div class="row">
+                                    <div class="col">
+                                        <label for="email">E-mail</label>
+                                        <input type="email" id="email" name="email" class="form-control" placeholder="E-mail" value="<?= htmlspecialchars($email) ?>">
+                                    </div>
+                                    <div class="col">
+
+                                        <label for="phone">Phone</label>
+                                        <input type="tel" id="phone" name="phone" class="form-control" placeholder="Phone" value="<?= htmlspecialchars($phone) ?>">
+                                    </div>
                                 </div>
+                                <br/>
+
+                                <label for="message">Message</label>
+                                <textarea name="message" id="message" cols="30" rows="10" class="form-control" placeholder="Your message?">
+                                    <?= htmlspecialchars($message) ?>
+                                </textarea>
+                                <br/>
+                                <input type="submit" class="btn btn-outline-dark" value="Send your message" />
                             </div>
-                            <br/>
-
-                            <div class="row">
-                                <div class="col">
-                                    <label for="email">E-mail</label>
-                                    <input type="email" id="email" name="email" class="form-control" placeholder="E-mail" value="<?= htmlspecialchars($email) ?>">
-                                </div>
-                                <div class="col">
-
-                                    <label for="phone">Phone</label>
-                                    <input type="tel" id="phone" name="phone" class="form-control" placeholder="Phone" value="<?= htmlspecialchars($phone) ?>">
-                                </div>
-                            </div>
-                            <br/>
-
-                            <label for="message">Message</label>
-                            <textarea name="message" id="message" cols="30" rows="10" class="form-control" placeholder="Your message?"><?= htmlspecialchars($message) ?></textarea>
-                            <br/>
-                            <input type="submit" class="btn btn-outline-dark" value="Send your message" />
-                        </div>
-                    </form>
-            </div>
-        </section>
-        <br/>
-        <br/>
+                        </form>
+                </div>
+            </section>
+            <br/>
+            <br/>
 
         </main>
 
@@ -368,6 +372,7 @@ if (isset($_GET['uspech']))
             </div>
             <div class="d-flex justify-content-end">
                 <p>Copyright &copy;Jiřina Trojánková 2018</p>
+            </div>
         </footer>
         <script src="/js/index-min.js" type="text/javascript"></script>
     </body>
