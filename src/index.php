@@ -37,11 +37,14 @@ if (isset($_GET['uspech']))
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>My portfolio</title>
+        <meta name="description" content="Personal portfolio Jiřina Trojánková, web developer" />
+        <meta name="keywords" content="Personal portfolio Jiřina Trojánková" />
+        <meta name="author" content="Jiřina Trojánková" />
+        <title>Jiřina Trojánková</title>
         <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:300,400" rel="stylesheet">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <link rel="stylesheet" href="/css/style.css">
-
+        <link rel="shortcut icon" href="/img/jt2.svg?v=2" type="image/x-icon">
     </head>
 
     <body>
@@ -49,7 +52,7 @@ if (isset($_GET['uspech']))
         <header>
             <div class="d-flex justify-content-between">
                 <div id="logo">
-                    <img src="/img/jt.svg" alt="My portfolio" width="50" height="50">
+                    <img src="/img/jt2.svg" alt="My portfolio" width="50" height="50">
                 </div>
 
                 <div id="welcome">
@@ -65,9 +68,6 @@ if (isset($_GET['uspech']))
                     <a href="#home">Home</a>
                 </nav>
             </div>
-
-
-
         </header>
 
         <main id="content" class="container">
@@ -85,7 +85,6 @@ if (isset($_GET['uspech']))
 
                     </div>
                 </div>
-
                 <h4>I am full stack web develeper based in Prague, working with HTML5, CSS, JavaScript and PHP. For my work I
                     use jQuery, React, MySql, Laravel, GitHub, Photoshop, Node.js, gulp, Sass, Bootstrap. </h4>
                 <br/>
@@ -127,8 +126,6 @@ if (isset($_GET['uspech']))
                 <br/>
                 <h2>My skills</h2>
                 <div id="my_progress">
-
-
                     <div id="bar1" class="bar">HTML 80%</div>
                     <div id="bar2" class="bar">CSS, Sass 70%</div>
                     <div id="bar3" class="bar">JavaScript 70%</div>
@@ -164,7 +161,6 @@ if (isset($_GET['uspech']))
             </section>
             <br/>
             <br/>
-
 
 
 
@@ -296,7 +292,6 @@ if (isset($_GET['uspech']))
                 <br/>
                 <br/>
                 <h2>Contact me</h2>
-
                 <h4>Find me here:</h4>
                 <div id="contacts">
                     <a href="https://github.com/jirina-trojankova" target="blank">
@@ -363,7 +358,6 @@ if (isset($_GET['uspech']))
             </section>
             <br/>
             <br/>
-
         </main>
 
         <footer>
