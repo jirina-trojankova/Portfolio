@@ -3,7 +3,7 @@ mb_internal_encoding("UTF-8");
 $hlaska = '';
 if (isset($_GET['uspech']))
         $hlaska = 'Email byl úspěšně odeslán, brzy vám odpovíme.';
-    if ($_POST) // V poli _POST něco je, odeslal se formulář
+    if ($_POST) // There's something in the POST
     {
         if (isset($_POST['firstname']) && $_POST['firstname'] &&
                 isset($_POST['lastname']) && $_POST['lastname'] &&
@@ -20,15 +20,20 @@ if (isset($_GET['uspech']))
             if ($uspech)
             {
                 $hlaska = 'Email byl úspěšně odeslán, brzy vám odpovíme.';
-                header('Location: #message?uspech=ano');
+                header('Location: #message');
+                // header('Location: #message?uspech=ano');
                 //http://www.test.com/index.htm?name1=value1&name2=value2
                 exit;            
             }
             else
+                    header('Location: #message');
                     $hlaska = 'Email se nepodařilo odeslat. Zkontrolujte adresu.';
+
         }
         else
-                $hlaska = 'Formulář není správně vyplněný!';
+            header('Location: #message');
+            $hlaska = 'Formulář není správně vyplněný!';
+
 }
 ?>
     <!DOCTYPE html>
@@ -315,6 +320,7 @@ if (isset($_GET['uspech']))
                     $firstname = (isset($_POST['firstname'])) ? $_POST['firstname'] : '';
                     $lastname = (isset($_POST['lastname'])) ? $_POST['lastname'] : '';
                     $email = (isset($_POST['email'])) ? $_POST['email'] : '';
+                    $phone = (isset($_POST['phone'])) ? $_POST['phone'] : '';
                     $message = (isset($_POST['message'])) ? $_POST['message'] : '';
                 ?>
                         <form method="POST" class="form-contact">
