@@ -19,19 +19,20 @@ if (isset($_GET['uspech']))
             $uspech = mb_send_mail($adresa, $predmet, $_POST['message'], $hlavicka);
             if ($uspech)
             {
+                header('Location: index.php?uspech=ano');
                 $hlaska = 'Email byl úspěšně odeslán, brzy vám odpovíme.';
-                header('Location: #message');
+                // header('Location: #message');
                 // header('Location: #message?uspech=ano');
                 //http://www.test.com/index.htm?name1=value1&name2=value2
                 exit;            
             }
             else
-                    header('Location: #message');
+                
                     $hlaska = 'Email se nepodařilo odeslat. Zkontrolujte adresu.';
 
         }
         else
-            header('Location: #message');
+            
             $hlaska = 'Formulář není správně vyplněný!';
 
 }
