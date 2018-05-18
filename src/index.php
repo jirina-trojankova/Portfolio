@@ -276,7 +276,8 @@ if (isset($_GET['success']))
                         <div class="my_text col-sm-6 col-md-7 col-lg-9">
                             <p>My name is Jiřina Trojánková. I am a full-stack web developer. I am developing user interfaces
                                 in JavaScript and React and backend of my projects in PHP and Laravel. I enjoy learning new
-                                trends.</p>
+                                trends.
+                            </p>
                             <p>I am open to learning new technologies and enjoy working with people who are as passionate about
                                 all web-related as me.</p>
                             <p>I like travelling and I am based in Prague, Czech Republic.</p>
@@ -317,53 +318,55 @@ if (isset($_GET['success']))
                     <h4>Send me a message</h4>
                     <p>Please send me a message and let me know what you think of my work. I'll be so happy to hear from you!</p>
 
-                    <?php
-                 if ($say)
-                     echo('<p>' . htmlspecialchars($say) . '</p>');
-
+                    <?php    
                     $firstname = (isset($_POST['firstname'])) ? $_POST['firstname'] : '';
                     $lastname = (isset($_POST['lastname'])) ? $_POST['lastname'] : '';
                     $email = (isset($_POST['email'])) ? $_POST['email'] : '';
                     $phone = (isset($_POST['phone'])) ? $_POST['phone'] : '';
                     $message = (isset($_POST['message'])) ? $_POST['message'] : '';
                 ?>
-                        <form method="POST" class="form-contact">
+                    <form method="POST" class="form-contact">
 
-                            <div class="form-group">
+                        <div class="form-group">
 
-                                <div class="row">
-                                    <div class="col">
-                                        <label for="firstname">First Name</label>
-                                        <input type="text" id="firstname" name="firstname" class="form-control" placeholder="First name" value="<?= htmlspecialchars($firstname) ?>">
-                                    </div>
-                                    <div class="col">
-                                        <label for="lastname">Last Name</label>
-                                        <input type="text" id="lastname" name="lastname" class="form-control" placeholder="Last name" value="<?= htmlspecialchars($lastname) ?>">
-                                    </div>
+                            <div class="row">
+                                <div class="col">
+                                    <label for="firstname">First Name</label>
+                                    <input type="text" id="firstname" name="firstname" class="form-control" placeholder="First name" value="<?= htmlspecialchars($firstname) ?>">
                                 </div>
-                                <br/>
-
-                                <div class="row">
-                                    <div class="col">
-                                        <label for="email">E-mail</label>
-                                        <input type="email" id="email" name="email" class="form-control" placeholder="E-mail" value="<?= htmlspecialchars($email) ?>">
-                                    </div>
-                                    <div class="col">
-
-                                        <label for="phone">Phone</label>
-                                        <input type="tel" id="phone" name="phone" class="form-control" placeholder="Phone" value="<?= htmlspecialchars($phone) ?>">
-                                    </div>
+                                <div class="col">
+                                    <label for="lastname">Last Name</label>
+                                    <input type="text" id="lastname" name="lastname" class="form-control" placeholder="Last name" value="<?= htmlspecialchars($lastname) ?>">
                                 </div>
-                                <br/>
-
-                                <label for="message">Message</label>
-                                <textarea name="message" id="message" cols="30" rows="10" class="form-control" placeholder="Your message?">
-                                    <?= htmlspecialchars($message) ?>
-                                </textarea>
-                                <br/>
-                                <input type="submit" class="btn btn-outline-dark" value="Send your message" />
                             </div>
-                        </form>
+                            <br/>
+
+                            <div class="row">
+                                <div class="col">
+                                    <label for="email">E-mail</label>
+                                    <input type="email" id="email" name="email" class="form-control" placeholder="E-mail" value="<?= htmlspecialchars($email) ?>">
+                                </div>
+                                <div class="col">
+
+                                    <label for="phone">Phone</label>
+                                    <input type="tel" id="phone" name="phone" class="form-control" placeholder="Phone" value="<?= htmlspecialchars($phone) ?>">
+                                </div>
+                            </div>
+                            <br/>
+
+                            <label for="message">Message</label>
+                            <textarea name="message" id="message" cols="30" rows="10" class="form-control" placeholder="Your message?">
+                                <?= htmlspecialchars($message) ?>
+                            </textarea>
+                            <br/>
+                            <input type="submit" class="btn btn-outline-dark" value="Send your message" />
+                        </div>
+
+                        <?php
+                        if ($say)
+                        echo('<p>' . htmlspecialchars($say) . '</p>');
+                        ?>
+                    </form>
                 </div>
             </section>
             <br/>
