@@ -3,7 +3,7 @@
 mb_internal_encoding("UTF-8");
 $say = '';
 if (isset($_GET['success']))
-        $say = 'The message have been send, I\'ll get back to you ASAP.';
+        $say = 'The message have been send, thanks a lot! I\'ll get back to you ASAP.';
     if ($_POST) // There's something in the POST
     {
         if (isset($_POST['firstname']) && $_POST['firstname'] &&
@@ -16,12 +16,12 @@ if (isset($_GET['success']))
             $header .= "\nMIME-Version: 1.0\n";
             $header .= "Content-Type: text/html; charset=\"utf-8\"\n";
             $address = 'jirina.trojankova@seznam.cz';
-            $subject = 'New message from mailform';
+            $subject = 'New message from mailform from ' . $_POST['firstname'] .' ' . $_POST['lastname'] . ' ' . $_POST['phone'];
             $success = mb_send_mail($address, $subject, $_POST['message'], $header);
             if ($success)
             {
                 header('Location: index.php?success=yes#message');
-                $say = 'The message have been send, I\'ll get back to you ASAP.';
+                $say = 'The message have been send, thanks a lot! I\'ll get back to you ASAP.';
                 // header('Location: index.php?success=yes');
                 // header("Location: index.php?status=thanks#contact");
                 // header('Location: #message');
@@ -315,6 +315,7 @@ if (isset($_GET['success']))
                 <br/>
                 <div id="form" class="light_gray red">
                     <h4>Send me a message</h4>
+                    <p>Please send me a message and let me know what you think of my work. I'll be so happy to hear from you!</p>
 
                     <?php
                  if ($say)
