@@ -1,8 +1,9 @@
 <?php
+// I have written this code with a help of itnetwork.cz
 mb_internal_encoding("UTF-8");
-$hlaska = '';
-if (isset($_GET['uspech']))
-        $hlaska = 'Email byl úspěšně odeslán, brzy vám odpovíme.';
+$say = '';
+if (isset($_GET['success']))
+        $say = 'The message have been send, I\'ll get back to you ASAP.';
     if ($_POST) // There's something in the POST
     {
         if (isset($_POST['firstname']) && $_POST['firstname'] &&
@@ -11,31 +12,31 @@ if (isset($_GET['uspech']))
                 isset($_POST['phone']) && $_POST['phone'] &&
                 isset($_POST['message']) && $_POST['message'])
         {
-            $hlavicka = 'From:' . $_POST['email'];
-            $hlavicka .= "\nMIME-Version: 1.0\n";
-            $hlavicka .= "Content-Type: text/html; charset=\"utf-8\"\n";
-            $adresa = 'jirina.trojankova@seznam.cz';
-            $predmet = 'Nová zpráva z mailformu';
-            $uspech = mb_send_mail($adresa, $predmet, $_POST['message'], $hlavicka);
-            if ($uspech)
+            $header = 'From:' . $_POST['email'];
+            $header .= "\nMIME-Version: 1.0\n";
+            $header .= "Content-Type: text/html; charset=\"utf-8\"\n";
+            $address = 'jirina.trojankova@seznam.cz';
+            $subject = 'New message from mailform';
+            $success = mb_send_mail($address, $subject, $_POST['message'], $header);
+            if ($success)
             {
-                header('Location: index.php?uspech=ano#message');
-                $hlaska = 'Email byl úspěšně odeslán, brzy vám odpovíme.';
-                // header('Location: index.php?uspech=ano');
+                header('Location: index.php?success=yes#message');
+                $say = 'The message have been send, I\'ll get back to you ASAP.';
+                // header('Location: index.php?success=yes');
                 // header("Location: index.php?status=thanks#contact");
                 // header('Location: #message');
-                // header('Location: #message?uspech=ano');
+                // header('Location: #message?success=yes');
                 //http://www.test.com/index.htm?name1=value1&name2=value2
                 exit;           
             }
             else
                 
-                    $hlaska = 'Email se nepodařilo odeslat. Zkontrolujte adresu.';
+                    $say = 'The message have not been send.';
 
         }
         else
             
-            $hlaska = 'Formulář není správně vyplněný!';
+            $say = 'Please fill in the form correctly and send again.';
 
 }
 ?>
@@ -315,10 +316,9 @@ if (isset($_GET['uspech']))
                 <div id="form" class="light_gray red">
                     <h4>Send me a message</h4>
 
-
                     <?php
-                 if ($hlaska)
-                     echo('<p>' . htmlspecialchars($hlaska) . '</p>');
+                 if ($say)
+                     echo('<p>' . htmlspecialchars($say) . '</p>');
 
                     $firstname = (isset($_POST['firstname'])) ? $_POST['firstname'] : '';
                     $lastname = (isset($_POST['lastname'])) ? $_POST['lastname'] : '';
